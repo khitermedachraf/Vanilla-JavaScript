@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>test</title>
+    <title>test</title>
 </head>
+
 <body>
-<input type="file" name="fgdf" value="dgfg" onchange='chargerTexte(this)' />
+    <input type="file" name="fgdf" value="dgfg" onchange='chargerTexte(this)' />
 </body>
+<script>
+    function moar(first, second) {
+        // On peut maintenant utiliser les variables « first » et « second » comme on le souhaite :
+        alert('Votre premier argument : ' + first);
+        alert('Votre deuxième argument : ' + second);
+    }
+    moar(prompt('Entrez votre premier argument :'), prompt('Entrez votre deuxième argument :'));
+</script>
 
 </html>
