@@ -30,6 +30,28 @@
     }
 
     alert('Le nombre est : ' + askNumber());
+    ///////////////////////////////////////  les Propriete . 
+    var myString = 'Test';
+    alert(myString.length); // Affiche : « 4 »
+
+    myString = 'Test 2';
+    alert(myString.length); // Affiche : « 6 » (l'espace est aussi un caractère)
+
+    var myArray = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+
+    myArray.shift(); // Retire « Sébastien »
+    myArray.pop(); // Retire « Guillaume »
+
+    alert(myArray); // Affiche « Laurence,Ludovic,Pauline »
+    ////////////////////////// 
+    var cousinsString = 'Pauline Guillaume Clarisse',
+        cousinsArray = cousinsString.split(' ');
+    alert(cousinsString);
+    alert(cousinsArray);
+
+    var cousinsString_2 = cousinsArray.join('-');
+
+    alert(cousinsString_2);
 </script>
 
 </html>
