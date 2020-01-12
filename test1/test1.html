@@ -52,6 +52,19 @@
     var cousinsString_2 = cousinsArray.join('-');
 
     alert(cousinsString_2);
+    var family = {
+        self: 'Achraf',
+        sister: 'Achwak',
+        brother: 'Amine',
+        cousin_1: 'Aymene',
+        cousin_2: 'Akram'
+    };
+
+    for (var id in family) { // On stocke l'identifiant dans "id" pour parcourir l'objet "family".
+
+        alert(family[id]);
+
+    }
 </script>
 
 </html>
