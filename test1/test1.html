@@ -20,6 +20,16 @@
     })(); // Fin de la zone isolée. Les variables créées dans cette zone sont détruites.
 
     alert('Dans la zone non-isolée, la couleur est : ' + test); // Le texte final contient bien le mot « noir » vu que la « zone isolée » n'a aucune influence sur le reste du code
+
+    function askNumber() {
+        var nbrEntree = parseInt(prompt('Entrez un nombre SVP : '));
+        while (isNaN(nbrEntree)) {
+            nbrEntree = parseInt(prompt('Entrez un nombre SVP : '));
+        }
+        return nbrEntree;
+    }
+
+    alert('Le nombre est : ' + askNumber());
 </script>
 
 </html>
