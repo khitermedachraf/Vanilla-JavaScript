@@ -1,75 +1,66 @@
-var test = 'noir'; // On crée une variable « test » contenant le mot « noir »
+function num2Letters(number) {
 
-(function() { // Début de la zone isolée
-
-    var test = 'blanc'; // On crée une variable du même nom avec le contenu « blanc » dans la zone isolée
-
-    alert('Dans la zone isolée, la couleur est : ' + test);
-
-})(); // Fin de la zone isolée. Les variables créées dans cette zone sont détruites.
-
-alert('Dans la zone non-isolée, la couleur est : ' + test); // Le texte final contient bien le mot « noir » vu que la « zone isolée » n'a aucune influence sur le reste du code
-
-function askNumber() {
-    var nbrEntree = parseInt(prompt('Entrez un nombre SVP : '));
-    while (isNaN(nbrEntree)) {
-        nbrEntree = parseInt(prompt('Entrez un nombre SVP : '));
+    if (isNaN(number) || number < 0 || 999 < number) {
+        return 'Veuillez entrer un nombre entier compris entre 0 et 999.';
     }
-    return nbrEntree;
+
+    var units2Letters = ['', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf'],
+        tens2Letters = ['', 'dix', 'vingt', 'trente', 'quarante', 'cinquante', 'soixante', 'soixante', 'quatre-vingt', 'quatre-vingt'];
+
+    var units = number % 10,
+        tens = (number % 100 - units) / 10,
+        hundreds = (number % 1000 - number % 100) / 100;
+
+    var unitsOut, tensOut, hundredsOut;
+
+
+    if (number === 0) {
+
+        return 'zéro';
+
+    } else {
+
+        // Traitement des unités
+
+        unitsOut = (units === 1 && tens > 0 && tens !== 8 ? 'et-' : '') + units2Letters[units];
+
+        // Traitement des dizaines
+
+        if (tens === 1 && units > 0) {
+
+            tensOut = units2Letters[10 + units];
+            unitsOut = '';
+
+        } else if (tens === 7 || tens === 9) {
+
+            tensOut = tens2Letters[tens] + '-' + (tens === 7 && units === 1 ? 'et-' : '') + units2Letters[10 + units];
+            unitsOut = '';
+
+        } else {
+
+            tensOut = tens2Letters[tens];
+
+        }
+
+        tensOut += (units === 0 && tens === 8 ? 's' : '');
+
+        // Traitement des centaines
+
+        hundredsOut = (hundreds > 1 ? units2Letters[hundreds] + '-' : '') + (hundreds > 0 ? 'cent' : '') + (hundreds > 1 && tens == 0 && units == 0 ? 's' : '');
+
+        // Retour du total
+
+        return hundredsOut + (hundredsOut && tensOut ? '-' : '') + tensOut + (hundredsOut && unitsOut || tensOut && unitsOut ? '-' : '') + unitsOut;
+    }
+
 }
 
-alert('Le nombre est : ' + askNumber());
-///////////////////////////////////////  les Propriete . 
-var myString = 'Test';
-alert(myString.length); // Affiche : « 4 »
 
-myString = 'Test 2';
-alert(myString.length); // Affiche : « 6 » (l'espace est aussi un caractère)
 
-var myArray = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+var userEntry;
 
-myArray.shift(); // Retire « Sébastien »
-myArray.pop(); // Retire « Guillaume »
+while (userEntry = prompt('Indiquez le nombre à écrire en toutes lettres (entre 0 et 999) :')) {
 
-alert(myArray); // Affiche « Laurence,Ludovic,Pauline »
-////////////////////////// 
-var cousinsString = 'Pauline Guillaume Clarisse',
-    cousinsArray = cousinsString.split(' ');
-alert(cousinsString);
-alert(cousinsArray);
-
-var cousinsString_2 = cousinsArray.join('-');
-
-alert(cousinsString_2);
-var family = {
-    self: 'Achraf',
-    sister: 'Achwak',
-    brother: 'Amine',
-    cousin_1: 'Aymene',
-    cousin_2: 'Akram'
-};
-
-for (var id in family) { // On stocke l'identifiant dans "id" pour parcourir l'objet "family".
-
-    alert(family[id]);
-
-}
-///    petit Exo *****************************************
-var nicks = [], // Création du tableau vide
-    nick;
-
-while (nick = prompt('Entrez un prénom :')) { // Si la valeur assignée à la variable « nick » est valide (différente de « null ») alors la boucle s'exécute
-    nicks.push(nick); // Ajoute le nouveau prénom au tableau
-}
-
-if (nicks.length > 0) { // On regarde le nombre d'items
-    alert(nicks.join(' ')); // Affiche les prénoms à la suite
-} else {
-    alert('Il n\'y a aucun prénom en mémoire !');
-}
-/// Aficcher les elements d un  tableau ****
-var array = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
-for (var i = 0, c = array.length; i < c; i++) {
-    alert(array[i]);
+    alert(num2Letters(parseInt(userEntry, 10)));
 
 }
