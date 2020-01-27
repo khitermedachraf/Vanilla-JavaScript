@@ -192,3 +192,26 @@ mainDiv.appendChild(form);
 
 // On insère mainDiv dans le <body>
 document.body.appendChild(mainDiv);
+///////// **************
+var zozor = document.getElementById('mascot');
+
+if (zozor) {
+    var figure = document.createElement('figure');
+    var img = document.createElement('img');
+    var figcaption = document.createElement('figcaption');
+
+    img.src = 'data/zozor-happy.png';
+    img.alt = figcaption.innerHTML = 'Photo de Zozor';
+
+    figure.appendChild(img);
+    figure.appendChild(figcaption);
+
+    zozor.parentNode.replaceChild(figure, zozor);
+}
+//////////// ************
+var output = document.getElementById('output');
+var brs = output.getElementsByTagName('br');
+
+for (var i = brs.length; i > 0; i--) {
+    brs[i - 1].parentNode.removeChild(brs[i - 1]);
+}
