@@ -23,3 +23,12 @@ article {
 span {
   margin: 10px;
 }
+
+
+form, #result {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid black;
+}

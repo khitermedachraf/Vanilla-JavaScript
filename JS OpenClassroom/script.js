@@ -55,3 +55,32 @@ eltChild.addEventListener('click', function(event) {          // On écoute l'é
     event.stopPropagation();
     
 });
+
+// question one 
+const input = document.getElementById('name');
+const resultName = document.getElementById('res-name');
+
+input.addEventListener('input', function(event) {
+    resultName.textContent = event.target.value; 
+});
+// question two
+
+const gender = document.querySelector('select#gender');
+const resultGender= document.getElementById('res-gender');
+
+gender.addEventListener('change', function(event) {
+    resultGender.textContent = event.target.value; 
+});
+// question three
+
+result = document.getElementById('result');
+
+result.addEventListener('mousemove', function(event) {
+    const x = event.offsetX; // Coordonnée X de la souris dans l'élément
+    const y = event.offsetY; // Coordonnée Y de la souris dans l'élément
+    const mouseX = document.getElementById('mouse-x');
+    mouseX.textContent = x ;
+           
+    const mouseY = document.getElementById('mouse-y');
+    mouseY.textContent = y;
+});
