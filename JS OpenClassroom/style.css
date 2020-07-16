@@ -14,3 +14,12 @@ article {
 .important {
   font-style: italic;
 }
+
+.link {
+  float: right;
+  margin-left: 30px;
+}
+
+span {
+  margin: 10px;
+}

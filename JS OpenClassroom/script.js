@@ -31,3 +31,27 @@ const secondParent = firstParent.parentElement ;
 const nextElt = secondParent.nextElementSibling ; 
 const li7 = nextElt.querySelector('ul > li');
 console.log(li7);
+ // parte three of JavaScript
+
+ const eltParent = document.getElementById('parent');    // On récupère l'élément sur lequel on veut détecter le clic
+
+const eltChild = document.getElementById('child');
+
+let counter1 = 0;
+let counter2 = 0 ; 
+eltParent.addEventListener('click', function() {          // On écoute l'événement click
+    counter1++;
+ let nbrClickParent = document.getElementById('parent-count') ; 
+  nbrClickParent.textContent = counter1 ; 
+  // On change le contenu de notre élément pour afficher "C'est cliqué !"
+});
+
+eltChild.addEventListener('click', function(event) {          // On écoute l'événement click
+    counter2++;
+    let nbrClickChild = document.getElementById('child-count') ; 
+    nbrClickChild.textContent = counter2 ; 
+    event.preventDefault();   
+    // On utilise la fonction preventDefault de notre objet event pour empêcher le        comportement par défaut de cet élément lors du clic de la souris
+    event.stopPropagation();
+    
+});
