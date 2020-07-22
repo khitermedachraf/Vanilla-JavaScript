@@ -102,7 +102,7 @@ result.addEventListener('mousemove', function(event) {
  */
 
 const ask_Weather = document.getElementById('ask-weather');
-ask_Weather.addEventListener('click', askWeather());
+ask_Weather.addEventListener('click', askWeather);
 
 function askWeather(){
   var request = new XMLHttpRequest();
