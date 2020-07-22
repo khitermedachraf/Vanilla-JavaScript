@@ -84,3 +84,45 @@ result.addEventListener('mousemove', function(event) {
     const mouseY = document.getElementById('mouse-y');
     mouseY.textContent = y;
 });
+
+
+/*
+    In this chapter you have learned:
+
+    What AJAX is;
+
+    How to use it to make a simple request to a web service;
+
+    What the JSON format is;
+
+    How this format is suitable for APIs and JavaScript;
+
+    How to retrieve data sent by a web service.
+ 
+ */
+
+const ask_Weather = document.getElementById('ask-weather');
+ask_Weather.addEventListener('click', askWeather());
+
+function askWeather(){
+  var request = new XMLHttpRequest();
+  
+  request.onreadystatechange = function() {
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+      var response = JSON.parse(this.responseText);
+      console.log(response.current_condition.condition);
+      const weatherResult = document.getElementById("weather-result");
+      weatherResult.textContent = response.current_condition.condition ;
+      
+    }
+  };
+  request.open("GET", "https://www.prevision-meteo.ch/services/json/paris");
+  request.send();
+  
+
+}
+
+
+
+
+

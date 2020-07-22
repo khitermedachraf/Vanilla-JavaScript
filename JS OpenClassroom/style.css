@@ -32,3 +32,15 @@ form, #result {
   padding: 20px;
   border: 1px solid black;
 }
+
+#ask-weather {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+#weather-result {
+  text-align: center;
+  font-size: 34px;
+}
