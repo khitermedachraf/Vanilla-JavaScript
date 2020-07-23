@@ -157,8 +157,9 @@ But we would like to do all of this with HTML5 only, without using any JavaScrip
 You can change the type of the email field rather than using a Regex via pattern;)
  */
 const email = document.getElementById("email");
-email.getElementsByTagName("input")[0] ;
 email.setAttribute("required", "true");
+email.setAttribute("type", "email");
+
 
 
 
