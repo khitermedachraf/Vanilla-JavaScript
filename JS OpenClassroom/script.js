@@ -122,6 +122,33 @@ function askWeather(){
 
 }
 
+// Question one &  question tow  : 
+/*
+Q1 : We first want to validate the Code field of the form. For each letter entered in the field having code ID, we want to check that the value of the field begins with CODE- thanks to a Regex: / ^ CODE- /. If the value does start with CODE- then we display in the element having for ID code-validation: Valid code, otherwise we display in this element Invalid code.
+
+Q2 :Now that we know if our code is valid or not, we would like to gray (thanks to the disabled attribute) the submit button (the input of type submit having the ID submit-btn) when the code is invalid, and to sober it up when the code is valid.
+
+This means that we will have to add a disabled = "true" attribute to the submit button when the code is invalid. And remove this disabled attribute when the code is valid (remember the course on modifying the DOM to define and remove attributes).
+*/
+function isValid(value) {
+    return /^CODE-/.test(value);
+}
+
+const textCode = document.getElementById('code');
+const codeValidation = document.getElementById('code-validation');
+const submitBtn = document.getElementById("submit-btn");
+
+textCode.addEventListener('input', function(e) {
+  var value = e.target.value;
+  if (isValid(value)){
+    codeValidation.textContent = "Code valide";
+    submitBtn.removeAttribute("disabled");
+  } else {
+    codeValidation.textContent = "Code invalide";
+    submitBtn.setAttribute("disabled", "true");
+  }
+    
+});
 
 
 
