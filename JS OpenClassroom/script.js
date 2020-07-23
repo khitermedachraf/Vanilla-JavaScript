@@ -150,6 +150,16 @@ textCode.addEventListener('input', function(e) {
     
 });
 
+/**
+ * Q3 : Finally, we have an Email field and we would like to make it mandatory and require the user to enter a valid email address.
+It will also be necessary to prevent the form from being submitted if it is not valid.
+But we would like to do all of this with HTML5 only, without using any JavaScript code.
+You can change the type of the email field rather than using a Regex via pattern;)
+ */
+const email = document.getElementById("email");
+email.getElementsByTagName("input")[0] ;
+email.setAttribute("required", "true");
+
 
 
 
