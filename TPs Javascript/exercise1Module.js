@@ -12,6 +12,7 @@ function troubleshooting() {
 
 	// Edit between these lines
 	// =================================
+	// it was : return "a" + "b" ;
   console.log(parseInt(y));
 	return a + b ;
 
