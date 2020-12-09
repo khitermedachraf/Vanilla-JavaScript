@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body style="text-align:center;">
+
+    <h1 style="color:green;">
+        GeeksForGeeks
+    </h1>
+
+    <input id="input" type="text" name="input" />
+    <button onclick="capitalizeFLetter()"> 
+			Click to capitalize 
+		</button>
+    <h3 id="div" style="color: green">
+    </h3>
+
+    <script>
+        function capitalizeFLetter() {
+            var input = document.getElementById("input");
+            var x = document.getElementById("div");
+            var string = input.value;
+            x.innerHTML = string.charAt(0).toUpperCase() +
+                string.slice(1);
+
+        }
+    </script>
+</body>
+
+</html>
