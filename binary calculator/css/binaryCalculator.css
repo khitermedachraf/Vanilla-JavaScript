@@ -13,7 +13,7 @@ body {
     margin-top: 15%;
 }
 
-#btns button {
+#btns>button {
     width: 25%;
     height: 36px;
     font-size: 18px;
