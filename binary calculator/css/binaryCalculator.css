@@ -1,0 +1,44 @@
+body {
+    width: 33%;
+    margin: auto;
+    padding: 4px;
+}
+
+#res {
+    background-color: lightgray;
+    border: 3px solid #000;
+    height: 48px;
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-top: 15%;
+}
+
+#btns button {
+    width: 25%;
+    height: 36px;
+    font-size: 18px;
+    margin: 0px;
+    float: left;
+    cursor: pointer;
+    /* Pointer/hand icon */
+}
+
+#btn0,
+#btn1 {
+    background-color: lightgreen;
+    color: brown;
+}
+
+#btnClr,
+#btnEql {
+    background-color: darkgreen;
+    color: white;
+}
+
+#btnSum,
+#btnSub,
+#btnMul,
+#btnDiv {
+    background-color: black;
+    color: red;
+}
