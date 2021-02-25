@@ -17,7 +17,15 @@ function add1(e) {
 }
 
 function displayResult(e) {
-    document.getElementById(btn.id).innerHTML++;
+    let array = str.split(" ");
+    let number1 = parseInt(array[0], 2);
+    let number2 = parseInt(array[2], 2);
+    let expression = number1 + array[1] + number2;
+    let result = Number(eval(expression)).toString(2);
+    if (array[1] == '/') {
+        result = (Math.floor(Number(eval(expression)))).toString(2);
+    }
+    document.getElementById('res').innerHTML = result;
 }
 
 function addSum(e) {
