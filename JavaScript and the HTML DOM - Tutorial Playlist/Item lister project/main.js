@@ -1,11 +1,15 @@
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
+var filter = document.getElementById('filter');
 
 // Form submit event
 form.addEventListener('click', addItem);
 
 // Delete event
 itemList.addEventListener('click', removeItem);
+
+// Filter event
+filter.addEventListener('keyup', filterItems);
 
 // Add item 
 function addItem(e) {
@@ -45,4 +49,23 @@ function removeItem(e) {
             itemList.removeChild(li);
         }
     }
+}
+
+// Filter items
+
+function filterItems(e) {
+    // convert text to lowercase
+    let text = e.target.value.toLowerCase();
+    // Get lis
+    var items = itemList.getElementsByTagName('li');
+    // Convert to an array
+    Array.from(items).forEach(function(item) {
+        let itemName = item.firstChild.textContent;
+        // match the search text with name of items
+        if (itemName.toLowerCase().indexOf(text) != -1) {
+            item.style.display = 'block'; // there is a match
+        } else {
+            item.style.display = 'none';
+        }
+    });
 }
