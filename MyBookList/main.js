@@ -53,7 +53,21 @@ class UI {
         // Vanish in 3 seconds
         setTimeout(() => document.querySelector('.alert').remove(), 3000);
     }
+}
 
+// Store Class: Handles Storage
+class Store {
+
+    static getBooks() {
+        let books;
+        if (localStorage.getItem('books') === null) {
+            books = [];
+        } else {
+            books = JSON.parse(localStorage.getItem('books'));
+        }
+
+        return books;
+    }
 
 }
 
@@ -84,11 +98,12 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
         // Clear fields
         UI.clearFields();
 
+        // Show success message
+        UI.showAlert('Book Added Successfully', 'success');
+
         // Add book to store
         Store.addBook(book);
 
-        // Show success message
-        UI.showAlert('Book Added', 'success');
 
 
     }
@@ -99,5 +114,7 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
     // Remove book from UI
     UI.deleteBook(e.target);
 
+    // Show success message
+    UI.showAlert('Book Removed Successfully', 'success');
 
 });
