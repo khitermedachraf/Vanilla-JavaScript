@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyBookList App</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
 </head>
 
-<body>
+<body style="padding: 5%;">
     <div class="container mt-4">
         <h1 class="display-4 text-center">
             <i class="fas fa-book-open text-primary"></i> My<span class="text-primary">Book</span>List
@@ -30,7 +30,18 @@
         <label for="isbn">ISBN#</label>
         <input type="text" id="isbn" class="form-control">
     </div>
-
+    <input type="submit" value="Add Book" class="btn btn-primary btn-block">
+    <table class="table table-striped mt-5">
+        <thead>
+            <tr style="background-color: rgb(5, 67, 184);"> sty
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN#</th>
+                <th></th>
+                </trstyle>
+        </thead>
+        <tbody id="book-list"></tbody>
+    </table>
 </body>
 
 </html>
