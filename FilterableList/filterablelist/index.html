@@ -83,7 +83,7 @@
 
         function filterNames() {
             // Get value of input
-            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+            let filterValue = filterInput.value.toUpperCase();
 
             // Get names ul
             let ul = document.getElementById('names');
@@ -96,6 +96,14 @@
                 // If matched
                 if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
                     li[i].style.display = '';
+                    // colorful the  characters that are matched by achraf
+                    let j = a.innerHTML.toUpperCase().indexOf(filterValue);
+                    let lengthInput = filterInput.value.length;
+                    let colorfulStr = "";
+                    for (j; j < lengthInput; j++) {
+                        colorfulStr += a.innerHTML[j];
+                    }
+                    console.log(colorfulStr);
                 } else {
                     li[i].style.display = 'none';
                 }
