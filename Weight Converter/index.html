@@ -51,8 +51,14 @@
     </div>
 
     <script>
+        document.getElementById('output').style.visibility = 'hidden';
+
         document.getElementById('lbsInput').addEventListener('input', function(e) {
+            document.getElementById('output').style.visibility = 'visible';
             let Pounds = e.target.value;
+            document.getElementById('gramsOutput').innerText = Pounds / 0.0022046;
+            document.getElementById('kgOutput').innerText = Pounds / 2.2046;
+            document.getElementById('ozOutput').innerText = Pounds * 16;
         });
     </script>
 </body>
