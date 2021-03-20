@@ -96,14 +96,6 @@
                 // If matched
                 if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
                     li[i].style.display = '';
-                    // colorful the  characters that are matched by achraf
-                    let j = a.innerHTML.toUpperCase().indexOf(filterValue);
-                    let lengthInput = filterInput.value.length;
-                    let colorfulStr = "";
-                    for (j; j < lengthInput; j++) {
-                        colorfulStr += a.innerHTML[j];
-                    }
-                    console.log(colorfulStr);
                 } else {
                     li[i].style.display = 'none';
                 }
