@@ -6,39 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 5%;
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .card-block {
+            padding: 2%;
+        }
+    </style>
     <title>Weight Converter</title>
 </head>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h1 class="display-4 text-center mb-3">Weight Converter</h1>
-            <form>
-                <div class="form-group">
-                    <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter Pounds...">
-                </div>
-            </form>
-            <div id="output">
-                <div class="card card-primary mb-2 card-block">
-                    <h4>Grams:</h4>
-                    <div id="gramsOutput"></div>
-                </div>
 
-                <div class="card card-success mb-2 card-block">
-                    <h4>Kilograms:</h4>
-                    <div id="kgOutput"></div>
-                </div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+                <form>
+                    <div class="form-group">
+                        <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter Pounds...">
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card bg-success mb-2 card-block">
+                        <h4>Grams:</h4>
+                        <div id="gramsOutput"></div>
+                    </div>
 
-                <div class="card card-danger mb-2 card-block">
-                    <h4>Ounces:</h4>
-                    <div id="ozOutput"></div>
+                    <div class="card bg-info mb-2 card-block">
+                        <h4>Kilograms:</h4>
+                        <div id="kgOutput"></div>
+                    </div>
+
+                    <div class="card bg-danger mb-2 card-block">
+                        <h4>Ounces:</h4>
+                        <div id="ozOutput"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<body>
-
+    <script>
+        document.getElementById('lbsInput').addEventListener('input', function(e) {
+            let Pounds = e.target.value;
+        });
+    </script>
 </body>
 
 </html>
