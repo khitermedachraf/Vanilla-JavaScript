@@ -1,3 +1,9 @@
+/**
+ * we will look at some of the very powerful higher order functions and working with arrays. 
+ * We will look at forEach, map, filter, reduce and sort. 
+ */
+
+
 const companies = [
     { name: "Company One", category: "Finance", start: 1981, end: 2004 },
     { name: "Company Two", category: "Retail", start: 1992, end: 2008 },
