@@ -32,14 +32,15 @@
                     console.log(blabla);
                     console.log("My name is :" + user.name);
                     var output = '';
-                    output += '<ul>' +
+
+                    output = '<ul>' +
                         '<li>ID: ' + user.id + '</li>' +
                         '<li>Name: ' + user.name + '</li>' +
                         '<li>Email: ' + user.email + '</li>' +
                         '</ul>';
                     let outputES6 = '';
                     // try to use Backticks { template literals } by KHITER
-                    outputES6 += `<h3>Using ES6 backticks: </h3>
+                    outputES6 = `<h3>Using ES6 backticks: </h3>
                         <ul>
                           <li>ID: ${user.id}</li>
                           <li>Name: ${user.name}</li> 
@@ -48,7 +49,6 @@
                     document.getElementById('user').innerHTML = output + outputES6;
                 }
             }
-
             xhr.send();
         }
 
@@ -60,14 +60,16 @@
                 if (this.status == 200) {
                     var users = JSON.parse(this.responseText);
 
-                    var output = '';
+                    let output = '';
 
-                    for (var i in users) {
-                        output += '<ul>' +
-                            '<li>ID: ' + users[i].id + '</li>' +
-                            '<li>Name: ' + users[i].name + '</li>' +
-                            '<li>Email: ' + users[i].email + '</li>' +
-                            '</ul>';
+                    for (let i in users) {
+                        // try to use Backticks { template literals } by KHITER
+                        output += `<h3>Using ES6 backticks: </h3>
+                        <ul>
+                          <li>ID: ${users[i].id}</li>
+                          <li>Name: ${users[i].name}</li> 
+                          <li>Email: ${users[i].email}</li> 
+                        </ul>  `;
                     }
 
                     document.getElementById('users').innerHTML = output;
