@@ -1,4 +1,9 @@
 [{
+        "id": 4,
+        "name": "KHITER Achraf",
+        "email": "khiter.med7@gmail.com"
+    },
+    {
         "id": 1,
         "name": "Rick",
         "email": "rick@gmail.com"
@@ -12,9 +17,5 @@
         "id": 3,
         "name": "Negan",
         "email": "negan@gmail.com"
-    } {
-        "id": 4,
-        "name": "KHITER Achraf",
-        "email": "khiter.med7@gmail.com"
     }
 ]
