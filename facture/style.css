@@ -2,6 +2,10 @@ body {
     font-size: 150%;
 }
 
+input {
+    font-size: larger;
+}
+
 .center {
     margin: auto;
     margin-top: 3%;
